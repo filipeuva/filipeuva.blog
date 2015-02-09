@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "filipeuva",
-    "repositoryName": "filipeuva.blog",
-    "branch": "gh-pages"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"filipeuva","repositoryName":"filipeuva.blog","branch":"gh-pages","cname":"filipeuva.com"},"site":{"title":"Filipe Uva","url":"http://filipeuva.com"},"socialnetwork":{},"theme":{"name":"Casper","url":"http://filipeuva.github.io/filipeuva.blog/themes/Casper"}}
