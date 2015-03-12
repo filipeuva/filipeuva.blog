@@ -1,0 +1,6 @@
+= Hello World
+
+
+Hi, this is mostly for testing the functionalities and future of hubpress as a static blogging engine.
+
+Guess this might have some usages as a personal blog. I'll keep you posted. 
