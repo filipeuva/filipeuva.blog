@@ -1,6 +1,11 @@
 = Hello World
 
+:hp-image: https://pbs.twimg.com/profile_images/519273886907502592/gGZL4aK2.jpeg
+:hp-tags: Status
 
-Hi, this is mostly for testing the functionalities and future of hubpress as a static blogging engine.
+Welcome to my personal blog, I'm interested in Video Games, Tech, Programming and many other topics.
 
-Guess this might have some usages as a personal blog. I'll keep you posted. 
+I'll try to keep this interesting without many expectations of a solid user base.
+
+Thanks for your attention :)
+
