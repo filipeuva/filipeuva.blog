@@ -17,7 +17,7 @@ xmlhttp.onreadystatechange=function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    document.getElementById("myDiv").innerHTML="Worked !";
     }
   }
 xmlhttp.open("GET","https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&q=https://gdata.youtube.com/feeds/base/users/UCt_fuy0XSQcOUNvXPT682lw/uploads&num=200",true);
