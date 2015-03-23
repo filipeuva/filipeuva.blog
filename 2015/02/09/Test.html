@@ -47,9 +47,23 @@ $jsonp.send('https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&q=https:/
           var parsedID =  youtubeID.match(/v=([A-Za-z0-9_-]+)/);
           if (!parsedID) continue;
 
+          var youtubeId = "Q4-MnX5PfO8";
+          YoutubeVideo(youtubeId, function(video){
+            console.log(video.title);
+            var webm = video.getSource("video/webm", "medium");
+            console.log("WebM: " + webm.url);
+            var mp4 = video.getSource("video/mp4", "medium");
+            console.log("MP4: " + mp4.url);
+          
           out += "<tr><td>" + arr[i].title + "</td><td>" +
-            "<iframe width=\"300\" height=\"30\"  src=\"http://www.youtube.com/embed/"+ parsedID[1] +"?rel=0&autohide=0\" frameBorder=\"0\" allowfullscreen></iframe>" +    
+            "<video controls='controls' src='"+ webm.url +"' />" +    
             "</td></tr>";
+          
+          });
+
+          //out += "<tr><td>" + arr[i].title + "</td><td>" +
+          //  "<iframe width=\"300\" height=\"30\"  src=\"http://www.youtube.com/embed/"+ parsedID[1] +"?rel=0&autohide=0\" frameBorder=\"0\" allowfullscreen></iframe>" +    
+          //  "</td></tr>";
         }
 
       out += "</table>"
