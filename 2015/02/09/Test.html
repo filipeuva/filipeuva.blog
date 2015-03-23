@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://raw.githubusercontent.com/endlesshack/youtube-video/master/vendor/coffee-script.js" />
 <script>
 var $jsonp = (function(){
   var that = {};
@@ -48,6 +49,7 @@ $jsonp.send('https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&q=https:/
           if (!parsedID) continue;
 
           var youtubeId = "Q4-MnX5PfO8";
+          
           YoutubeVideo(youtubeId, function(video){
             console.log(video.title);
             var webm = video.getSource("video/webm", "medium");
@@ -61,6 +63,7 @@ $jsonp.send('https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&q=https:/
           
           });
 
+        
           //out += "<tr><td>" + arr[i].title + "</td><td>" +
           //  "<iframe width=\"300\" height=\"30\"  src=\"http://www.youtube.com/embed/"+ parsedID[1] +"?rel=0&autohide=0\" frameBorder=\"0\" allowfullscreen></iframe>" +    
           //  "</td></tr>";
