@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <script>
-  -document.addEventListener('DOMContentLoaded', function(){
+  function on_load('DOMContentLoaded', function(){
     var iframe = document.getElementById('iframeId');
     var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
   
@@ -11,6 +11,6 @@
 <head>
 </head>
 <body>
-<iframe src="//seene.co/s/m3qxMQ/embed" width="800" height="800" id="iframeId" frameborder="0" seamless ></iframe>
+<iframe onload="on_load(this)" src="//seene.co/s/m3qxMQ/embed" width="800" height="800" id="iframeId" frameborder="0" seamless ></iframe>
 </body>
 </html>
