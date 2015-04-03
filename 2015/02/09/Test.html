@@ -1,75 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-var $jsonp = (function(){
-  var that = {};
-
-  that.send = function(src, options) {
-    var callback_name = options.callbackName || 'callback',
-      on_success = options.onSuccess || function(){},
-      on_timeout = options.onTimeout || function(){},
-      timeout = options.timeout || 10; // sec
-
-    var timeout_trigger = window.setTimeout(function(){
-      window[callback_name] = function(){};
-      on_timeout();
-    }, timeout * 1000);
-
-    window[callback_name] = function(data){
-      window.clearTimeout(timeout_trigger);
-      on_success(data);
-    }
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = src;
-
-    document.getElementsByTagName('head')[0].appendChild(script);
-  }
-
-  return that;
-})();
-
-function loadXMLDoc() {
-$jsonp.send('https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&q=https://gdata.youtube.com/feeds/base/users/UCt_fuy0XSQcOUNvXPT682lw/uploads&num=200&callback=handleStuff', {
-      callbackName: 'handleStuff',
-      onSuccess: function(json){
-          
-        var arr = json.responseData.feed.entries;
-        var i;
-        var out = "<table>";
-
-
-        for(i = 0; i < arr.length; i++) {
-          var youtubeID = arr[i].link;
-          var parsedID =  youtubeID.match(/v=([A-Za-z0-9_-]+)/);
-          if (!parsedID) continue;
-        
-          out += "<tr><td>" + arr[i].title + "</td><td>" +
-            "<iframe width=\"300\" height=\"30\"  src=\"http://www.youtube.com/embed/"+ parsedID[1] +"?rel=0&autohide=0\" frameBorder=\"0\" allowfullscreen></iframe>" +    
-            "</td></tr>";
-        }
-
-      out += "</table>"
-      document.getElementById("myDiv").innerHTML = out;
-
-      },
-      onTimeout: function(){
-          console.log('timeout!');
-      },
-      timeout: 5
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function(){
-   loadXMLDoc();
- });
-</script>
 </head>
 <body>
-
-<div id="myDiv"></div>
+<iframe src="//seene.co/s/m3qxMQ/embed" width="400" height="400" frameborder="0" seamless ></iframe>
 </body>
 </html>
