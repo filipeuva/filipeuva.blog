@@ -2,19 +2,18 @@
 <html>
 <script>
   function on_load(){
-    var iframe = document.getElementById('iframeId');
-    var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
+    var myIFrame = document.getElementById('iframeId');
+
+    myIFrame.height = "100%";
+    myIFrame.width = "100%";
   
-   innerDoc.getElementsByClassName("overlay-fade overlay-embed").remove();
+   //innerDoc.getElementsByClassName("overlay-fade overlay-embed").remove();
  };
 </script>
 <head>
 </head>
 <body>
-<iframe onload="on_load()" src="//seene.co/s/m3qxMQ/embed" width="1080" height="1920" id="iframeId" frameborder="0" seamless >
-  <script type="text/javascript">
-        document.getElementsByClassName("overlay-fade overlay-embed").removeElement();
-</script>
+<iframe onload="on_load()" src="http://seene.co/s/m3qxMQ/embed" styles="overflow: none;"  id="iframeId" frameborder="0" seamless >
 </iframe>
 </body>
 </html>
