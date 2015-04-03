@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <script>
-  function on_load('DOMContentLoaded', function(){
-    var iframe = document.getElementById('iframeId');
+  function on_load(iframe){
+    //var iframe = document.getElementById('iframeId');
     var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
   
    innerDoc.getElementsByClassName("overlay-fade overlay-embed").remove();
- });
+ };
 </script>
 <head>
 </head>
