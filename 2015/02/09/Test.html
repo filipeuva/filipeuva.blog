@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <script>
-  function on_load(iframe){
-    //var iframe = document.getElementById('iframeId');
+  function on_load(){
+    var iframe = document.getElementById('iframeId');
     var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
   
    innerDoc.getElementsByClassName("overlay-fade overlay-embed").remove();
@@ -11,6 +11,6 @@
 <head>
 </head>
 <body>
-<iframe onload="on_load(this)" src="//seene.co/s/m3qxMQ/embed" width="800" height="800" id="iframeId" frameborder="0" seamless ></iframe>
+<iframe onload="on_load()" src="//seene.co/s/m3qxMQ/embed" width="800" height="800" id="iframeId" frameborder="0" seamless ></iframe>
 </body>
 </html>
