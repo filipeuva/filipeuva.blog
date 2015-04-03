@@ -38,9 +38,10 @@
   function on_load(){
     var myIFrame = document.getElementById('iframeId');
 
-    myIFrame.height = "1000px";
-    myIFrame.width = "2000px";
-    myIFrame.styles = "overflow : hidden; "  	
+    myIFrame.height = "120%";
+    myIFrame.width = "100%";
+    myIFrame.styles = "overflow : hidden; ";
+    myIFrame.style.zIndex = -1;
   
    //innerDoc.getElementsByClassName("overlay-fade overlay-embed").remove();
  };
