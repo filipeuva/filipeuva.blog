@@ -2,12 +2,15 @@
 <html>
 <script>
   -document.addEventListener('DOMContentLoaded', function(){
--   document.getElementsByClassName("overlay-fade overlay-embed").remove();
+    var iframe = document.getElementById('iframeId');
+    var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
+  
+-   innerDoc.getElementsByClassName("overlay-fade overlay-embed").remove();
 - });
 </script>
 <head>
 </head>
 <body>
-<iframe src="//seene.co/s/m3qxMQ/embed" width="800" height="800" frameborder="0" seamless ></iframe>
+<iframe src="//seene.co/s/m3qxMQ/embed" width="800" height="800" id="iframeId" frameborder="0" seamless ></iframe>
 </body>
 </html>
