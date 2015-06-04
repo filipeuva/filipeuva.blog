@@ -4,7 +4,7 @@
 var queryDict = {}
 location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]})
 
-var payload = JSON.stringify({{"text": "This is a line of text in a channel.\nAnd this is another line of text."}});
+var payload = JSON.stringify({"text": "This is a line of text in a channel.\nAnd this is another line of text."});
 
 var xmlhttp = new XMLHttpRequest();
 var url = "https://hooks.slack.com/services/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";
