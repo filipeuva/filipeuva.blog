@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html>
 <script>
-  function on_load(){
-    var myIFrame = document.getElementById('iframeId');
+ function postJSONData(JSONData, localMode)
+    {
+        var localJSONData = JSONData;
+        var postMode = localMode;
 
-    myIFrame.height = "100%";
-    myIFrame.width = "100%";
-  
-   //innerDoc.getElementsByClassName("overlay-fade overlay-embed").remove();
- };
+         $.ajax({
+                type: 'POST',
+                url: 'https://hooks.slack.com/services/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',
+                contentType:"application/json; charset=utf-8",
+                dataType:"json"
+                data:  JSONData
+                success: function(data){
+                    alert("SECOND POST JSON DATA");
+                }   // Success Function
+}); // AJAX Call
+
+        alert("POST JSON ------------> "+localJSONData +" "+postMode);
+    }
+
+var queryDict = {}
+location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]})
+
+var payload = {"text": "This is a line of text in a channel.\nAnd this is another line of text."};
+
+postJSONData(payload,"");
+
 </script>
 <head>
 </head>
 <body>
-<iframe onload="on_load()" src="http://seene.co/s/m3qxMQ/embed" styles="overflow: none;"  id="iframeId" frameborder="0" seamless >
-</iframe>
 </body>
 </html>
