@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html>
 <script>
- function postJSONData(JSONData, localMode)
-    {
-        var localJSONData = JSONData;
-        var postMode = localMode;
-
-         $.ajax({
-                type: 'POST',
-                url: 'https://hooks.slack.com/services/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',
-                contentType:"application/json; charset=utf-8",
-                dataType:"json"
-                data:  JSONData
-                success: function(data){
-                    alert("SECOND POST JSON DATA");
-                }   // Success Function
-}); // AJAX Call
-
-        alert("POST JSON ------------> "+localJSONData +" "+postMode);
-    }
-
 var queryDict = {}
 location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]})
 
-var payload = {"text": "This is a line of text in a channel.\nAnd this is another line of text."};
+var payload = JSON.stringify({{"text": "This is a line of text in a channel.\nAnd this is another line of text."}});
 
-postJSONData(payload,"");
+var xmlhttp = new XMLHttpRequest();
+var url = "https://hooks.slack.com/services/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";
+xmlhttp.open("POST", url, true);
+xmlhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");
+
+xmlhttp.onreadystatechange = function () { //Call a function when the state changes.
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        alert(xmlhttp.responseText);
+    }
+}
+var parameters = {
+    "username": "myname",
+    "password": "mypass"
+};
+// Neither was accepted when I set with parameters="username=myname"+"&password=mypass" as the server may not accept that
+xmlhttp.send(parameters);
 
 </script>
 <head>
