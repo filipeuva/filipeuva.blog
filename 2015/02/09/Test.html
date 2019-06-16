@@ -1,28 +1,24 @@
 <!DOCTYPE html>
-<html>
-<script>
-var queryDict = {}
-location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]})
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>test</title>
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    </head>
 
-var payload = JSON.stringify({"text": "This is a line of text in a channel.\nAnd this is another line of text."});
+    <body style="background-color: black;height: 100%;">
+        <img id="image" style="display: block;height:97vh;margin: auto;overflow: hidden;clip-path: inset(0px 0px 2.17% 0px);">
 
-var xmlhttp = new XMLHttpRequest();
-var url = "https://hooks.slack.com/services/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";
-xmlhttp.open("POST", url, true);
-xmlhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");
+        <script type = "text/javascript">
+            var image = document.getElementById("image");
+            var currentPos = 0;
 
-xmlhttp.onreadystatechange = function () { //Call a function when the state changes.
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        alert(xmlhttp.responseText);
-    }
-}
+            function update() {
+                image.src = "https://eumetview.eumetsat.int/static-images/latestImages/EUMETSAT_MSG_RGBNatColourEnhncd_FullResolution.jpg?"+ new Date().getTime();
+            }
 
-// Neither was accepted when I set with parameters="username=myname"+"&password=mypass" as the server may not accept that
-xmlhttp.send(payload);
-
-</script>
-<head>
-</head>
-<body>
-</body>
+            setInterval(update, 300000);
+            update()
+        </script>
+    </body>
 </html>
