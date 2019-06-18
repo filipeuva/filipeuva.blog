@@ -26,18 +26,27 @@
 				margin: auto;
 				overflow: hidden;
 				clip-path: polygon(30% 1%, 70% 1%, 99% 25%, 99% 75%, 70% 97.8%, 30% 97.8%, 1% 75%, 1% 25%);
+				-webkit-clip-path: polygon(30% 1%, 70% 1%, 99% 25%, 99% 75%, 70% 97.8%, 30% 97.8%, 1% 75%, 1% 25%);
 			}
 		</style>
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web:200&display=swap" rel="stylesheet">
     </head>
-
     <body style="background-color: black;height: 100%;">
         
 	  	<img id="image" class="img">
 
-         <div id="time_container" style="color: white;position: absolute;left: 90%;top: 5%;">
-        	<div id="time"></div>
-	    	<div id="sunrise"></div>
-	    	<div id="sunset"></div>
+         <div id="time_container" style="color: white;position: absolute;left: 82.5%;top: 5%;font-family: 'Titillium Web', sans-serif;font-weight: 1; font-style: normal;">
+        	<div id="time" style="font-size:4em"></div>
+        	<table>
+        		<tr style="text-align: right;">
+        			<td style="vertical-align: top;">SR</td>
+        			<td><div id="sunrise" style="font-size:2em"></div></td>
+        		</tr>
+        		<tr>
+        			<td style="vertical-align: top;">SS</td>
+        			<td><div id="sunset" style="font-size:2em"></div></td>
+        		</tr>
+        	</table>
         </div>
 
 
@@ -55,7 +64,7 @@
             }
 
         	function digitFormat(number) {
-        		return (number > 10 ? '' : '0') + number;
+        		return (number >= 10 ? '' : '0') + number;
         	}
 
     		function timeFormat(time) {
